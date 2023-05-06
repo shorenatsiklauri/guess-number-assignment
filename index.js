@@ -14,7 +14,7 @@ chebtn.addEventListener("click", function () {
 
   if (!guessNumber) {
     message.textContent = "No number!";
-  } else if (guessNumber > 0) {
+  } else if (guessNumber > 0 && guessNumber < 100) {
     if (guessNumber === secretNumber) {
       message.textContent = "Correct Number!";
       gamenumber.textContent = secretNumber;
