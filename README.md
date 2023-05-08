@@ -26,8 +26,6 @@ There should also be a score information displayed, which initially starts at a 
 
 Furthermore, there should be a button to start the game again, which resets the score and allows the player to make a new guess. The highscore information should be preserved even when the game is restarted.
 
-- Design of the game inspired by old games
-
 ### Screenshot
 
 ![](./screenshot.png)
