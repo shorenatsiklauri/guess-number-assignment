@@ -118,6 +118,13 @@ h1 {
   margin-bottom: 2rem;
 }
 
+.redmessage {
+  color: red;
+  font-size: 12px;
+  margin-bottom: 20px;
+  display: none;
+}
+
 /* MOBILE VERSION STYLES */
 @media screen and (max-width: 767px) {
   /* Adjust header height for mobile version */

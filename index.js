@@ -4,6 +4,7 @@ const chebtn = document.querySelector(".btn.check");
 let message = document.querySelector(".message");
 let Score = document.querySelector(".label-score");
 let showhighscore = document.querySelector(".label-highscore");
+let showredtext = document.querySelector(".redmessage");
 
 let secretNumber = Math.trunc(Math.random() * 100) + 1;
 let score = 100;
@@ -14,15 +15,19 @@ chebtn.addEventListener("click", function () {
 
   if (!guessNumber) {
     message.textContent = "No number!";
+  } else if (guessNumber > 100) {
+    showredtext.style.display = "block";
   } else if (guessNumber > 0 && guessNumber < 100) {
     if (guessNumber === secretNumber) {
       message.textContent = "Correct Number!";
+      showredtext.style.display = "none";
       gamenumber.textContent = secretNumber;
       document.querySelector("body").style.backgroundColor = "#60b347";
 
       if (score > highscore) {
         highscore = score;
         showhighscore.textContent = "highscore:" + highscore;
+        showredtext.style.display = "none";
       }
     } else if (!guessNumber !== secretNumber) {
       if (score > 1) {
@@ -30,8 +35,10 @@ chebtn.addEventListener("click", function () {
           message.textContent = "Too high";
           score--;
           Score.textContent = "Score:" + score;
+          showredtext.style.display = "none";
         } else {
           message.textContent = "Too Low";
+          showredtext.style.display = "none";
           score--;
           Score.textContent = "Score:" + score;
         }
